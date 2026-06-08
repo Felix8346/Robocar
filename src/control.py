@@ -27,11 +27,7 @@ def calculate_error():
         return -1.0
 
     # Linie rechts
-    elif (
-        not sensors.status_left
-        and not sensors.status_middle
-        and not sensors.status_right
-    ):
+    elif not sensors.status_left and not sensors.status_middle and sensors.status_right:
         return 1.0
 
     # Zwischenpositionen
@@ -72,20 +68,14 @@ while True:
     speed_left = BASE_SPEED - round(correction)
     speed_right = BASE_SPEED + round(correction)
 
+    # Begrenzen
+    speed_left = max(-100, min(100, speed_left))
+    speed_right = max(-100, min(100, speed_right))
+
     engine.front_left(speed_left)
     engine.rear_left(speed_left)
     engine.front_right(speed_right)
-    engine.rear_left(speed_right)
-
-    # Begrenzen
-    # left_speed = max(0, min(100, left_speed))
-    # right_speed = max(0, min(100, right_speed))
-    if speed_left > 100:
-        engine.front_left(100)
-        engine.rear_left(100)
-    elif speed_right < -100:
-        engine.front_left(-100)
-        engine.rear_left(-100)
+    engine.rear_right(speed_right)
 
     last_error = error
 
