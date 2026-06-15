@@ -86,21 +86,3 @@ if __name__ == "__main__":
 
         else:
             print("ongoing")
-
-# while True:
-# if line_sensor_right.value == 0:
-# ("ground detected right")
-# elif line_sensor_right.value == 1:
-# print("lure detected right")
-# elif line_sensor_middle.value == 0:
-# print("lure detected middle")
-# elif line_sensor_middle.value == 1:
-#  print("ground detected middle")
-# elif line_sensor_left.value == 0:
-#    print("lure detected left")
-# elif line_sensor_left.value == 1:
-#    print("ground detected left")
-# else:
-# print("no line sensors connected")
-
-# time.sleep(1)

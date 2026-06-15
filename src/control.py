@@ -92,6 +92,6 @@ if __name__ == "__main__":
 
             last_error = error
 
-            time.sleep(0.01)  # 50 Hz
+            time.sleep(0.005)  # 50 Hz
     except:
         engine.stop_all()
