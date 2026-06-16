@@ -112,6 +112,7 @@ def front_right(speed=0):
         pca.channels[6].duty_cycle = 0
 
 
+# emergency stop for engines
 if __name__ == "__main__":
     init()
 
